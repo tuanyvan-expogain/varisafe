@@ -1,0 +1,396 @@
+body
+{
+	font-size: 12px;
+	margin: 0px auto;
+	width: 900px;	
+	padding: 0px;
+	font-family: Verdana, Arial, Sans-Serif;	
+	text-align: center;
+	
+	
+}
+td
+{
+	font-size: 12px;
+	padding: 5px;
+}
+
+
+a
+{
+	color: #417191;
+	text-decoration: none;
+}
+
+div#main a {text-decoration:underline;}
+a:hover
+{
+	color: #cd7a46;
+	text-decoration: underline;
+	
+}
+p
+{
+	margin-left: 15px;
+	line-height: 12pt;
+}
+
+h2
+{
+    color: #a44f52;
+    font-size: 16px;
+    font-family: Verdana, Arial, Sans-Serif;
+    margin: 20px 0px 5px 0px;
+}
+
+h3
+{
+	color: #8cafb5;
+	font-size: 14px;
+	font-family: Verdana, Arial, Sans-Serif;
+	margin: 4px 0px 4px 0px;
+	padding-bottom: 5px;
+	padding-top: 5px;
+	
+}
+
+h6
+{
+	color: #000;
+	font-size: 14px;
+	font-family: Verdana, Arial, Sans-Serif;
+	margin: 0px 0px 10px 135px;
+	font-weight: normal;
+}
+
+h4
+{
+	color: #3a5a81;
+	font-size: 14px;
+	font-family: Verdana, Arial, Sans-Serif;
+	
+}
+
+hr
+{
+	height: 1px;
+	color: #3a5a81;
+}
+div#container
+{
+	padding-right: 0px;
+	padding-left: 0px;
+	padding-bottom: 0px;
+	margin: 0px;
+	padding-top: 0px;
+	text-align: left;
+}
+
+/*header logo and phone */
+div#logo
+{
+	
+	margin: 20px 0px 0px 0px;
+	
+	
+}
+
+/* main navigation - thanks to Suckerfish drop downs */
+div#links
+{
+	clear: both;
+	margin: 1px 2px 10px 0px;
+	height: 28px;
+	background-color: #3366ff;
+}
+
+ul#nav
+{
+	list-style: none;
+	display: inline;
+	
+}
+
+ul#nav a
+{	color: #fff;
+	font-family: Arial, Sans-Serif;
+	letter-spacing: normal;
+	font-size: 11px;
+	text-decoration: none;
+	
+	
+}
+ul#nav a:hover
+{
+	text-decoration: underline;
+}
+ul#nav li
+{
+	float:left;
+	margin: 7px 5px 3px 10px;
+	padding: 0px 10px 0px 13px;
+}
+/*end main navigation */
+
+/*footer styles */
+
+
+#footer
+{
+	background-color: #efebdf;
+	margin: 3px 0px 3px 0px;
+	height: 34px;
+	clear: both;
+}
+.row
+{
+	
+	padding-bottom: 5px;
+	width: 750px;
+	
+	
+}
+
+div.row span.label {
+	float: left;
+	width: 160px;
+	text-align: left;
+	font-size: 13px;	
+	color: #2d305d;
+	font-family: Verdana, Arial, Sans-Serif;
+	font-weight: bold;
+  }
+  
+  div.row span.labelwide {
+	float: left;
+	width: 200px;
+	text-align: left;
+	font-size: 13px;	
+	color: #2d305d;
+	font-family: Verdana, Arial, Sans-Serif;
+	font-weight: bold;
+  }
+
+div.row span.tip
+{
+	color: Red;
+	font-size: 11px;
+	
+}
+.xstand
+{
+	height: 400px;
+	padding-bottom: 20px;
+	width: 750px;
+	
+	
+}
+
+div.xstand span.label {
+	float: left;
+	width: 150px;
+	text-align: left;
+	font-size: 13px;	
+	color: #3a5a81;
+	font-family: Verdana, Arial, Sans-Serif;
+	font-weight: bold;
+  }
+
+div.row input {
+ 
+  width: 150px;
+  text-align: left;
+  } 
+  
+div.row input.txtlrg, .txtlrg
+{
+	width: 400px;
+}  
+
+div.row input.txtsml, .txtsml
+{
+	width: 60px;
+}  
+div.row input.btn
+{
+    width: 50px;
+    text-align: center;
+    margin-left: 150px;
+    background-color: #efebdf;
+    font-weight: bold;
+    color: #a44f52;
+    font-family: Verdana;
+}  
+
+#chkLanguage input
+{
+	margin: 0px;
+	padding: 0px;
+	width: 20px;
+}
+
+ul#menu li
+{
+	margin: 10px;
+}
+
+ul#menu
+{
+	font-size: 12px;
+}
+
+.error
+{
+	margin-top: 20px;
+	font-weight: bold;
+	margin-bottom: 20px;
+	color: #dc143c;
+}
+
+
+  div.form {width:96%; margin-left:2%;}  
+     div.form div {margin-top:10px;}
+    div.form div div{width:48%; margin-top:0; }
+     div.form div div label, 
+     div.form div div span {width:33%; display:block; float:left;}
+     div.form div div input, 
+     div.form div div select {width:64%; float:right;}
+    
+     div.form div div select {width:65%;}
+     div.form div div.phone {float:left; clear:both;}
+     div.form div div#email {margin-top:10px;}
+    div.form div div.phone div.pf {width:64%; float:right;}
+     div.form div div.phone input.p {width:59%; float:none; display:inline;}
+    div.form div div.phone input.e {width:24%; float:none; display:inline;}
+     div.form div div.phone label.e {float:none;  display:inline;}
+    
+     div.form  div#CompanyInfo div {margin-bottom:10px;}
+     div.form div div.r {float:right;}
+     div.form div div.l {float:left; clear:both;}
+    
+     div.form  div#changePassword {clear:both;}
+    
+     div.form input.btn{float:right; margin-bottom:5px; width:14%; }
+     
+     div.form p.ins {background-color:#f1f1f1; margin:0; width:80%; padding:1%;
+        float:left; margin-top:10px; margin-bottom:10px; }
+        
+        div.form div.ins p.ins {margin:0; padding-left:10px; width:96%;}
+     
+    div.form div#changePassword div input {margin-bottom:5px; }
+    div.form div#changePassword div label {margin-bottom:5px;}
+    
+    div.ins {background-color:#f1f1f1; padding:5px 10px; margin-top:10px; }
+    div.clear {clear:both;}
+    
+    
+     table.resultsGrid {width:99.5%;  margin:0 auto; margin-top:10px; 
+        border-collapse:collapse; border:1px solid #f1f1f1;
+        
+        }
+    
+    table.resultsGrid td {padding:3px 5px; line-height:1.6em; border-right:1px solid #e1e1e1;}
+   
+    table.resultsGrid td.small {width:11%;  }
+    table.resultsGrid td.last {border-right:none;}
+    table.resultsGrid tr.hd input {margin-right:5px;}
+    table.resultsGrid tr.hd label.name {margin-right:50px; display:block; float:left; }
+    
+   
+    table.resultsGrid tr.hd {color: #fff; font-size:14px; background-color:#8CAEB5;
+         border-top:1px solid #648489;
+    border-bottom:1px solid #648489; }
+    
+    table.resultsGrid tr.hd td {padding-top:0; padding-bottom:0; }
+  
+  
+  div#addUser {width:99.5%; background-color:#f1f1f1; padding-bottom:10px; 
+    margin-top:20px; padding-top:0;}
+    
+  div#addUser H3 {margin:0; color: #fff; font-size:14px; padding-left:5px; background-color:#8CAEB5;}   
+  
+    table.newUser {width:99.5%; margin-top:10px;}
+    table.newUser input {width:200px; }
+    
+    table.newUser td.rfv {width:20px;}
+    
+  div#addUser input {float:right; margin-right:10px;}
+  
+  div#Search {width:40%; float:left;}
+  div#legend {width:50%; float:right; margin:0; padding-top:0;}
+  
+  div.hidden { visibility:hidden; display:none;}
+  
+  
+  div.l span {font-size: 13px;	
+	color: #2d305d;
+	font-family: Verdana, Arial, Sans-Serif;
+	font-weight: bold;}
+	
+ fieldset div.l {width:55%; float:left; margin-top:20px;}	
+ 
+ fieldset div.r {width:43%; float:right; margin-top:20px; }
+ fieldset div.row {width:100%; border-bottom:1px solid #999; padding-bottom:7px; padding-top:7px;}
+ fieldset div.row .address {}
+  fieldset div.r  div.row {border-bottom:1px solid #999; width:90%; float:right;}
+  fieldset div.r  div.row .label {width:80px;}
+  fieldset div.r  div.row .txt {width:250px;}
+   fieldset div.r  div.row .ck input {width:25px;}
+  fieldset div.r  div.btn {width:40%; float:right; text-align:right; margin-top:90px;	}
+  
+  div.r div.row span.cblabel {font-size: 13px;	
+	color: #2d305d; width:400px;
+	font-family: Verdana, Arial, Sans-Serif;
+	font-weight: bold;}
+	
+div.mlsBtn, div.photoUp 	 {background-color:#e6e6e6; border:1px solid #999; padding:7px;
+	width:850px; margin:0 auto; margin-top:15px; }
+
+div.mlsBtn span.label {width:80px; color: #2d305d; 
+	font-family: Verdana, Arial, Sans-Serif;
+	font-weight: bold;}
+
+fieldset {}	
+fieldset legend {color: #a44f52;
+    font-size: 22px; 
+    font-family: Verdana, Arial, Sans-Serif;
+    }	
+	
+
+div.photoUp h3 {margin-bottom:0; font-size:16px; }
+div.photoUp {padding-bottom:15px;}
+div.photoUp span.label { color: #2d305d; 
+	font-family: Verdana, Arial, Sans-Serif;
+	font-weight: bold; float: left;
+	width: 220px;
+	text-align: left; }	
+div.photoUp div.r span.label {width:250px;}
+.divcaption {margin-top:10px;}
+
+.caption {width:600px;}
+.fileUp {background-color:#ffffff;}
+
+.bntUpload {text-align:right; margin-right:28px; margin-top:10px;}
+
+.DLImages {border:1px solid #999; width:850px; margin:0 auto; padding:7px; margin-top:20px; background-color:#e6e6e6; }
+
+.p_img {border:1px solid #999; text-align:center; width:270px; padding-bottom:7px; background-color:#fff; padding-top:10px;}
+
+.p_img img {width:250px;}
+
+#orderbuttons, #lsblistings 
+{
+    display: inline;
+}
+#orderbuttons #btnUp
+{
+    position: relative;
+    top: -170px;
+    left: 15px;
+}
+#orderbuttons #btnDown
+{
+    position: relative;
+    top: -140px;
+    left: -35px;
+}

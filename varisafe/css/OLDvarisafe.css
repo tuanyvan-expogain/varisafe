@@ -1,0 +1,174 @@
+﻿body {
+    background-image: url("../img/background-gradient.jpg");
+    background-position: top left;
+    background-repeat: repeat-x;
+}
+.container {
+    background-color: #fff;
+    -webkit-box-shadow:  0px 0px 40px 0px #000;
+    box-shadow:  0px 0px 40px 0px #000;
+    -webkit-box-shadow:  0px 0px 40px 0px rgba(0, 0, 0, .75);
+    box-shadow:  0px 0px 40px 0px rgba(0, 0, 0, .75);
+}
+#header {
+    height: 210px;
+    background-image: url("../img/header-back.png");
+    background-repeat: no-repeat;
+    background-position: top right;
+    padding: 0;
+}
+
+#logo {
+    text-indent: -9999px;
+    display: inline-block;
+    width: 488px;
+    height: 210px;
+    background-repeat: no-repeat;
+    background-image: url("../img/varisafe-logo.png");
+    margin: 0px;
+}
+
+#header-contact {
+    color: #fff;
+    margin-right: 40px;
+}
+
+#header-contact a {
+    color: #fff;
+}
+
+#header-contact, #header-contact a {
+        display: inline-block;
+        text-align: right;
+    }
+    
+/* SOCIAL */
+.social-icon {
+    text-indent: -9999px;
+    display: inline-block;
+    width: 42px;
+    height: 42px;
+    background-repeat: no-repeat;
+    margin: 25px 10px 10px 10px;
+}
+#icon-facebook {
+    background-image: url("../img/facebook-icon.png");
+}
+#icon-twitter {
+    background-image: url("../img/twitter-icon.png");
+    margin-right: 40px;
+}
+/* END SOCIAL */
+
+/* NAV */
+#globalNav {
+    background-color: #ef9a10;
+}
+
+#globalNav > div {
+    background-color: #ef9a10;
+    text-align: center;
+}
+#globalNav > div > div {
+    display: block;
+    height: inherit;
+}
+#nav1 {
+    font-size: 20px;
+    color: #fff;
+    margin: 0 auto !important;
+    display: block;
+    height: 100%;
+    clear: both;
+}
+
+#nav1 a {
+    font-size: 20px;    
+    height: 50px;
+    color: #fff;
+}
+#nav1 li:hover, #nav1 li.active {
+    background-color: #feab03;
+}
+
+#nav1 > li {
+    float: left;
+    list-style-type: none;
+    display: block;
+    height: 50px;
+}
+
+#nav1 > li a {
+    padding: 0 40px;
+    line-height: 50px;
+}
+
+#nav1 > li > ul {
+    position: absolute;
+    display: none;
+}
+
+/* END NAV */
+
+#slider-wrap {
+    margin-top: 20px;
+    background-color: #fff;
+}
+
+#content, #footerwrap {
+    background-color: #d8e5f5;
+}
+
+/* slider */
+
+.carousel 
+{
+    overflow: hidden;
+    margin-bottom: 0;   
+    height: 350px;
+}
+
+.carousel .item img {
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+}
+.carousel-control {
+    top: 47%;
+}
+
+/* end slide */
+
+div.credit 
+{
+    margin-top: 30px;
+}
+
+/* FOOTER MENU */
+#footerwrap {
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+#footerwrap > ul {
+    display: inline-block;
+    margin: 0 auto;
+}
+
+#footerwrap > ul > li {
+    display: inline-block;
+    margin: 0 auto;
+    margin: 0 20px;
+}
+
+#footerwrap > ul > li a {
+    color: #456ea8;
+    font-weight: bold;
+}
+
+/* END FOOTER MENU */
+
+#news {
+    list-style-type: none;
+    margin: 0;
+}

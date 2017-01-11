@@ -1,0 +1,484 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0CF29D51-B9BD-4A9F-A868-53928FC20569}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>varisafe</RootNamespace>
+    <AssemblyName>varisafe</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>varisafe.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>varisafe.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=1.0.10618.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL" />
+    <Reference Include="FreeTextBox, Version=3.3.0.22914, Culture=neutral, PublicKeyToken=5962a4e684a48b87, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Users\Rich\Downloads\RTE\FTB\Framework-2-0\FreeTextBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.XStandard, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Recaptcha, Version=1.0.5.0, Culture=neutral, PublicKeyToken=9afc4d65b28c38c2, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\working\recaptcha-dotnet-1.0.5.0-binary\Recaptcha.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="XStandard.WebForms, Version=2.0.2725.21529, Culture=neutral, PublicKeyToken=c8e1bca20d955ede">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\kw\kw\bin\XStandard.WebForms.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Default.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="admin\content.aspx.vb">
+      <DependentUpon>content.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\controlheader.ascx.vb">
+      <DependentUpon>controlheader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\course.aspx.vb">
+      <DependentUpon>course.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\courses.aspx.vb">
+      <DependentUpon>courses.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\default.aspx.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\deletenewsitem.aspx.designer.vb">
+      <DependentUpon>deletenewsitem.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\deletenewsitem.aspx.vb">
+      <DependentUpon>deletenewsitem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\editcontent.aspx.vb">
+      <DependentUpon>editcontent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\footer.ascx.vb">
+      <DependentUpon>footer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\header.ascx.vb">
+      <DependentUpon>header.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\logout.aspx.designer.vb">
+      <DependentUpon>logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\logout.aspx.vb">
+      <DependentUpon>logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\menu.aspx.vb">
+      <DependentUpon>menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\news.aspx.vb">
+      <DependentUpon>news.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\newsitem.aspx.vb">
+      <DependentUpon>newsitem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\newsitem_1.aspx.vb">
+      <DependentUpon>newsitem_1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\page.aspx.vb">
+      <DependentUpon>page.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\pages.aspx.vb">
+      <DependentUpon>pages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\registration.aspx.designer.vb">
+      <DependentUpon>registration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\registration.aspx.vb">
+      <SubType>ASPXCodebehind</SubType>
+      <DependentUpon>registration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\registrations.aspx.designer.vb">
+      <DependentUpon>registrations.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\registrations.aspx.vb">
+      <SubType>ASPXCodebehind</SubType>
+      <DependentUpon>registrations.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\signout.aspx.vb">
+      <DependentUpon>signout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\template.aspx.vb">
+      <DependentUpon>template.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\templates.aspx.vb">
+      <DependentUpon>templates.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CDataGridToExcel.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ContactForm.ascx.designer.vb">
+      <DependentUpon>ContactForm.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ContactForm.ascx.vb">
+      <DependentUpon>ContactForm.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="content.ascx.vb">
+      <DependentUpon>content.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ControlTemplate.ascx.vb">
+      <DependentUpon>ControlTemplate.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="registration.aspx.designer.vb">
+      <DependentUpon>registration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="registration.aspx.vb">
+      <DependentUpon>registration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="slider.ascx.vb">
+      <DependentUpon>slider.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.vb">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.designer.vb">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="featurednews.ascx.vb">
+      <DependentUpon>featurednews.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="footer.ascx.vb">
+      <DependentUpon>footer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Global.asax.vb">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="HomePageTop.ascx.designer.vb">
+      <DependentUpon>HomePageTop.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="HomePageTop.ascx.vb">
+      <DependentUpon>HomePageTop.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mainnav.ascx.vb">
+      <DependentUpon>mainnav.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="modLanguage.vb" />
+    <Compile Include="img\modUI.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="page.ascx.vb">
+      <DependentUpon>page.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="public.Master.designer.vb">
+      <DependentUpon>public.Master</DependentUpon>
+    </Compile>
+    <Compile Include="public.Master.vb">
+      <DependentUpon>public.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="register.ascx.designer.vb">
+      <DependentUpon>register.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="register.ascx.vb">
+      <DependentUpon>register.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sitemap.ascx.vb">
+      <DependentUpon>sitemap.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="thankyou.ascx.designer.vb">
+      <DependentUpon>thankyou.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="thankyou.ascx.vb">
+      <DependentUpon>thankyou.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="thankyou.aspx.designer.vb">
+      <DependentUpon>thankyou.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="thankyou.aspx.vb">
+      <SubType>ASPXCodebehind</SubType>
+      <DependentUpon>thankyou.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="upcoming.ascx.designer.vb">
+      <DependentUpon>upcoming.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="upcoming.ascx.vb">
+      <DependentUpon>upcoming.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="admin\content.aspx.resx">
+      <DependentUpon>content.aspx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="admin\controlheader.ascx.resx">
+      <DependentUpon>controlheader.ascx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="admin\default.aspx.resx">
+      <DependentUpon>default.aspx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="admin\editcontent.aspx.resx">
+      <DependentUpon>editcontent.aspx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="admin\footer.ascx.resx">
+      <DependentUpon>footer.ascx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="admin\header.ascx.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="admin\listing.aspx.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="admin\menu.aspx.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="admin\news.aspx.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="admin\newsitem.aspx.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="admin\page.aspx.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="admin\pages.aspx.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="admin\search.ascx.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="admin\template.aspx.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="content.ascx.resx">
+      <DependentUpon>content.ascx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlTemplate.ascx.resx">
+      <DependentUpon>ControlTemplate.ascx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="slider.ascx.resx">
+      <DependentUpon>slider.ascx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="featurednews.ascx.resx">
+      <DependentUpon>featurednews.ascx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="footer.ascx.resx">
+      <DependentUpon>footer.ascx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mainnav.ascx.resx">
+      <DependentUpon>mainnav.ascx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="admin\content.aspx" />
+    <Content Include="admin\control.css" />
+    <Content Include="admin\controlheader.ascx" />
+    <Content Include="admin\course.aspx" />
+    <Content Include="admin\courses.aspx" />
+    <Content Include="admin\default.aspx" />
+    <Content Include="admin\deletenewsitem.aspx" />
+    <Content Include="admin\editcontent.aspx" />
+    <Content Include="admin\footer.ascx" />
+    <Content Include="admin\header.ascx" />
+    <Content Include="admin\logout.aspx" />
+    <Content Include="admin\menu.aspx" />
+    <Content Include="admin\news.aspx" />
+    <Content Include="admin\newsitem.aspx" />
+    <Content Include="admin\newsitem_1.aspx" />
+    <Content Include="admin\page.aspx" />
+    <Content Include="admin\pages.aspx" />
+    <Content Include="admin\registration.aspx" />
+    <Content Include="admin\registrations.aspx" />
+    <Content Include="admin\signout.aspx" />
+    <Content Include="admin\template.aspx" />
+    <Content Include="admin\templates.aspx" />
+    <Content Include="admin\testing.aspx" />
+    <Content Include="ContactForm.ascx" />
+    <Content Include="content.ascx" />
+    <Content Include="ControlTemplate.ascx" />
+    <Content Include="registration.aspx" />
+    <Content Include="images\facebook-like-us.png" />
+    <Content Include="images\register.png" />
+    <Content Include="slider.ascx" />
+    <Content Include="css\bootstrap-responsive.css" />
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\OLDvarisafe.css" />
+    <Content Include="css\varisafe-responsive.css" />
+    <Content Include="css\varisafe.css" />
+    <Content Include="featurednews.ascx" />
+    <Content Include="footer.ascx" />
+    <Content Include="Global.asax" />
+    <Content Include="HomePageTop.ascx" />
+    <Content Include="img\glyphicons-halflings-white.png" />
+    <Content Include="img\glyphicons-halflings.png" />
+    <Content Include="js\bootstrap.js" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\jquery-1.8.2.min.js" />
+    <Content Include="mainnav.ascx" />
+    <Content Include="page.ascx" />
+    <Content Include="public.Master" />
+    <Content Include="register.ascx" />
+    <Content Include="sitemap.ascx" />
+    <Content Include="sitemap.aspx" />
+    <Content Include="thankyou.ascx" />
+    <Content Include="thankyou.aspx" />
+    <Content Include="upcoming.ascx" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="XStandard">
+      <Guid>{0EED7203-1661-11D7-84A3-00606744831D}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessRules\BusinessRules.vbproj">
+      <Project>{1AAF086A-57C0-4AFF-817B-314C04D59689}</Project>
+      <Name>BusinessRules</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v8.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49646</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
