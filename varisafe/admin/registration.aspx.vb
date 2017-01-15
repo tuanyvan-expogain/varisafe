@@ -61,6 +61,13 @@ Public Partial Class registration
             .Address2 = txtAddress2.Text
             .Province = ddlProvince.Text
             .PostalCode = txtPostalCode.Text
+
+            .InternalNotes = txtInternalNotes.Text
+            If txtAdjustedRate.Text <> "" Then
+                .AdjustedRate = CDec(txtAdjustedRate.Text)
+            Else
+                .AdjustedRate = -1
+            End If
             .SaveRegistration()
         End With
 
@@ -98,6 +105,11 @@ Public Partial Class registration
             ddlProvince.SelectedValue = .Province
             txtPostalCode.Text = .PostalCode
             txtRegDate.Text = .RegDate.ToString
+            txtInternalNotes.Text = .InternalNotes
+
+            If .AdjustedRate >= 0 Then
+                txtAdjustedRate.Text = .AdjustedRate.ToString
+            End If
         End With
     End Sub
 

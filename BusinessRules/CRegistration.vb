@@ -29,6 +29,8 @@ Public Class CRegistration
     Private mRegDate As DateTime
     Private mPromoCode As String
     Private mWaitList As Boolean = False
+    Private mInternalNotes As String
+    Private mAdjustedRate As Decimal = -1
 
 #End Region
 
@@ -235,21 +237,40 @@ Public Class CRegistration
             mWaitList = value
         End Set
     End Property
+    Public Property InternalNotes() As String
+        Get
+            Return mInternalNotes
+        End Get
+        Set(value As String)
+            mInternalNotes = value
+        End Set
+    End Property
+    Public Property AdjustedRate As Decimal
+        Get
+            Return mAdjustedRate
+        End Get
+        Set(value As Decimal)
+            mAdjustedRate = value
+        End Set
+    End Property
+
 #End Region
 
 #Region "Methods"
 
-    Sub SearchRegistrations(ByVal CourseTypeID As Integer, ByVal cy As String, ByVal StartDate As String, ByVal EndDate As String, ByVal fname As String, ByVal lname As String, ByVal em As String, ByVal ph As String)
+    Sub SearchRegistrations(ByVal CourseTypeID As Integer, ByVal cy As String, ByVal StartDate As String, ByVal EndDate As String, ByVal fname As String, ByVal lname As String, ByVal em As String, ByVal ph As String, ByVal rid As Integer, ByVal WaitStatus As Integer)
 
-        CourseDS = SqlHelper.ExecuteDataset(strConn, CommandType.StoredProcedure, "spSearchRegistrations", _
-            New SqlParameter("@CourseTypeID", CourseTypeID), _
-            New SqlParameter("@City", cy), _
-            New SqlParameter("@StartDate", StartDate), _
-            New SqlParameter("@EndDate", EndDate), _
-            New SqlParameter("@FirstName", fname), _
-            New SqlParameter("@LastName", lname), _
-            New SqlParameter("@Email", em), _
-            New SqlParameter("@Phone", ph))
+        CourseDS = SqlHelper.ExecuteDataset(strConn, CommandType.StoredProcedure, "spSearchRegistrations",
+            New SqlParameter("@CourseTypeID", CourseTypeID),
+            New SqlParameter("@City", cy),
+            New SqlParameter("@StartDate", StartDate),
+            New SqlParameter("@EndDate", EndDate),
+            New SqlParameter("@FirstName", fname),
+            New SqlParameter("@LastName", lname),
+            New SqlParameter("@Email", em),
+            New SqlParameter("@Phone", ph),
+            New SqlParameter("@RegistrationID", rid),
+            New SqlParameter("@WaitList", WaitStatus))
 
     End Sub
 
@@ -264,28 +285,30 @@ Public Class CRegistration
 
         Dim rid As Integer = RegistrationID
 
-        RegistrationID = CheckNullNum(SqlHelper.ExecuteScalar(strConn, CommandType.StoredProcedure, "spSaveRegistration", _
-            New SqlParameter("@RegistrationID", RegistrationID), _
-            New SqlParameter("@CourseID", CourseID), _
-            New SqlParameter("@FirstName", FirstName), _
-            New SqlParameter("@LastName", LastName), _
-            New SqlParameter("@School", School), _
-            New SqlParameter("@Age", Age), _
-            New SqlParameter("@Allergies", Allergies), _
-            New SqlParameter("@Health", Health), _
-            New SqlParameter("@Comments", Comments), _
-            New SqlParameter("@ParentFirst", ParentFirst), _
-            New SqlParameter("@ParentLast", ParentLast), _
-            New SqlParameter("@EmergPhone", EmergPhone), _
-            New SqlParameter("@Email", Email), _
-            New SqlParameter("@Phone", Phone), _
-            New SqlParameter("@City", City), _
-            New SqlParameter("@Address", Address), _
-            New SqlParameter("@Address2", Address2), _
-            New SqlParameter("@Province", Province), _
-            New SqlParameter("@PostalCode", PostalCode), _
-            New SqlParameter("@PromoCode", PromoCode), _
-            New SqlParameter("@WaitList", WaitList)))
+        RegistrationID = CheckNullNum(SqlHelper.ExecuteScalar(strConn, CommandType.StoredProcedure, "spSaveRegistration",
+            New SqlParameter("@RegistrationID", RegistrationID),
+            New SqlParameter("@CourseID", CourseID),
+            New SqlParameter("@FirstName", FirstName),
+            New SqlParameter("@LastName", LastName),
+            New SqlParameter("@School", School),
+            New SqlParameter("@Age", Age),
+            New SqlParameter("@Allergies", Allergies),
+            New SqlParameter("@Health", Health),
+            New SqlParameter("@Comments", Comments),
+            New SqlParameter("@ParentFirst", ParentFirst),
+            New SqlParameter("@ParentLast", ParentLast),
+            New SqlParameter("@EmergPhone", EmergPhone),
+            New SqlParameter("@Email", Email),
+            New SqlParameter("@Phone", Phone),
+            New SqlParameter("@City", City),
+            New SqlParameter("@Address", Address),
+            New SqlParameter("@Address2", Address2),
+            New SqlParameter("@Province", Province),
+            New SqlParameter("@PostalCode", PostalCode),
+            New SqlParameter("@PromoCode", PromoCode),
+            New SqlParameter("@WaitList", WaitList),
+            New SqlParameter("@InternalNotes", InternalNotes),
+            New SqlParameter("@AdjustedRate", AdjustedRate)))
 
         If rid = 0 And RegistrationID > 0 Then
             'New reg, so send emails
@@ -480,6 +503,12 @@ Public Class CRegistration
 
                 If Not IsDBNull(.Item("WaitList")) Then
                     WaitList = .Item("WaitList")
+                End If
+
+                InternalNotes = .Item("InternalNotes").ToString
+
+                If Not IsDBNull(.Item("AdjustedRate")) Then
+                    AdjustedRate = CheckNullNum(.Item("AdjustedRate"))
                 End If
             End While
         End With

@@ -103,8 +103,20 @@ Public Partial Class registrations
             cy = ddlCity.SelectedItem.Text
         End If
 
+        Dim rid As Integer
+
+        If txtRegistrationID.Text <> "" Then
+            rid = CInt(txtRegistrationID.Text)
+        End If
+
+        Dim WaitStatus As Integer = -1
+
+        If ddlWaitList.SelectedIndex > 0 Then
+            WaitStatus = CInt(ddlWaitList.SelectedValue)
+        End If
+
         With objReg
-            .SearchRegistrations(CourseTypeID, cy, sDate, eDate, txtFirstName.Text, txtLastName.Text, txtEmail.Text, txtPhone.Text)
+            .SearchRegistrations(CourseTypeID, cy, sDate, eDate, txtFirstName.Text, txtLastName.Text, txtEmail.Text, txtPhone.Text, rid, WaitStatus)
             gvReg.DataSource = .CourseDS.Tables(0)
             gvReg.DataBind()
             lblNumResults.Text = .CourseDS.Tables(0).Rows.Count.ToString + " Registrations"
@@ -321,8 +333,19 @@ Public Partial Class registrations
             cy = ddlCity.SelectedItem.Text
         End If
 
+        Dim rid As Integer
+        If txtRegistrationID.Text <> "" Then
+            rid = CInt(txtRegistrationID.Text)
+        End If
+
+        Dim WaitStatus As Integer = -1
+
+        If ddlWaitList.SelectedIndex > 0 Then
+            WaitStatus = CInt(ddlWaitList.SelectedValue)
+        End If
+
         With objReg
-            .SearchRegistrations(CourseTypeID, cy, sDate, eDate, txtFirstName.Text, txtLastName.Text, txtEmail.Text, txtPhone.Text)
+            .SearchRegistrations(CourseTypeID, cy, sDate, eDate, txtFirstName.Text, txtLastName.Text, txtEmail.Text, txtPhone.Text, rid, WaitStatus)
             Dim dView As New DataView(.CourseDS.Tables(0), "", e.SortExpression & " " & ltlDir.Text, DataViewRowState.OriginalRows)
             gvReg.DataSource = dView
             gvReg.DataBind()

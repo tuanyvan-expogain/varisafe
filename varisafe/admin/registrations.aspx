@@ -45,6 +45,18 @@
             <span class="label">Phone:</span>
             <asp:textbox id="txtPhone" runat="server"></asp:textbox>
         </div>
+        <div class="row">
+            <span class="label">Registration #:</span>
+            <asp:textbox id="txtRegistrationID" runat="server"></asp:textbox>
+        </div>
+        <div class="row">
+            <span class="label">Wait Status:</span>
+            <asp:dropdownlist id="ddlWaitList" runat="server">
+                <asp:listitem value="NULL" selected="true">Any</asp:listitem>
+                <asp:listitem value="0">Registered</asp:listitem>
+                <asp:listitem value="1">Wait Listed</asp:listitem>
+            </asp:dropdownlist>
+        </div>
         <asp:button id="btnSearch" runat="server" text="Search" />
         <asp:button id="btnReset" runat="server" text="Reset" />
     </div>
