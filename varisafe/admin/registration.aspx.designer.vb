@@ -374,6 +374,24 @@ Partial Public Class registration
     Protected WithEvents btnEmail As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
+    '''ddlCopy control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ddlCopy As Global.System.Web.UI.WebControls.DropDownList
+    
+    '''<summary>
+    '''btnCopy control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnCopy As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
     '''Footer1 control.
     '''</summary>
     '''<remarks>

@@ -235,6 +235,12 @@ Public Class CCourse
 
     End Sub
 
+    Sub GetUpcomingDS()
+
+        CourseDS = SqlHelper.ExecuteDataset(strConn, CommandType.StoredProcedure, "spGetUpcoming")
+
+    End Sub
+
     Sub SearchUpcomingByCity()
 
         Courses = SqlHelper.ExecuteReader(strConn, CommandType.StoredProcedure, "spSearchCourses",

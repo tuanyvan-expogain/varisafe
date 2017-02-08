@@ -1,5 +1,6 @@
 Imports System.Data.SqlClient
 Imports System.Web.Security
+Imports System.Security.Cryptography
 
 Public Class _default1
     Inherits System.Web.UI.Page
@@ -38,10 +39,10 @@ Public Class _default1
         Dim objUser As New BusinessRules.CUser()
 
         'Try
-            With objUser
-                .Username = txtUsername.Text
-            .Password = txtPassword.Text
-                .ValidateUser()
+        With objUser
+            .Username = txtUsername.Text
+            .Password = HashPass(txtPassword.Text)
+            .ValidateUser()
 
             If .UserID > 0 Then
                 bolAuthenticated = True
@@ -67,4 +68,33 @@ Public Class _default1
         'End Try
 
     End Sub
+
+    Private Function HashPass(ByVal PlainPass As String) As String
+
+        Dim hpw As Byte()
+        Dim final As String
+
+        Dim Data As Byte() = Encoding.UTF8.GetBytes(PlainPass)
+        Dim shaM As SHA512 = New SHA512Managed()
+
+        hpw = shaM.ComputeHash(Data)
+
+        Dim hashedInputStringBuilder As New System.Text.StringBuilder(128)
+        Dim b As Object
+        Dim i As Integer
+
+        For i = 0 To hpw.Length - 1
+            hashedInputStringBuilder.Append(hpw(i).ToString("x"))
+        Next
+
+        'For Each b In hpw
+        '    hashedInputStringBuilder.Append(b.ToString("x"))
+        'Next
+        final = hashedInputStringBuilder.ToString()
+        'final = final.ToString()
+
+        Return final 'SHA512(hpw)
+
+    End Function
+
 End Class

@@ -122,6 +122,14 @@
         <asp:literal id="ltlRegistrationID" runat="server" visible="false"></asp:literal>
         <asp:button id="btnSave" runat="server" text="Save" />
         <asp:button id="btnEmail" runat="server" text="Email" />
+        <hr />
+        <div class="row">
+            <span class="labelwide">Copy To</span>
+            <asp:dropdownlist id="ddlCopy" runat="server" datatextfield="CourseName" datavaluefield="CourseID">
+            </asp:dropdownlist>
+            <asp:button id="btnCopy" runat="server" text="Copy" />
+        </div>
+        
     </div>
 
     </form>

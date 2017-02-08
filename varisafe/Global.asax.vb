@@ -19,6 +19,15 @@ Public Class Global_asax
     End Sub
 
     Sub Application_BeginRequest(ByVal sender As Object, ByVal e As EventArgs)
+
+        If IsNothing(CType(sender, HttpApplication).Request) Then
+            Exit Sub
+        End If
+
+        If IsNothing(CType(sender, HttpApplication).Context) Then
+            Exit Sub
+        End If
+
         ' Fires at the beginning of each request
         Dim request As HttpRequest = CType(sender, HttpApplication).Request
         Dim context As HttpContext = CType(sender, HttpApplication).Context
@@ -153,13 +162,13 @@ Public Class Global_asax
 
     Sub Application_Error(ByVal sender As Object, ByVal e As EventArgs)
 
-        ' Fires when an error occurs
-        Dim objErr As Exception = Server.GetLastError().GetBaseException()
-        Dim err As String = objErr.Message.ToString()
-        Dim errUrl As String = Request.Url.ToString() & "<p>" & objErr.StackTrace.ToString() & "</p>"
+        ' Fires when an error occurs - do not enable
+        'Dim objErr As Exception = Server.GetLastError().GetBaseException()
+        'Dim err As String = objErr.Message.ToString()
+        'Dim errUrl As String = Request.Url.ToString() & "<p>" & objErr.StackTrace.ToString() & "</p>"
 
-        'BusinessRules.CEmail.SendErrorMessage(objErr, Request.Form.ToString(), Request.QueryString.ToString())
-        Server.ClearError()
+        ''BusinessRules.CEmail.SendErrorMessage(objErr, Request.Form.ToString(), Request.QueryString.ToString())
+        'Server.ClearError()
 
         'If err <> "External component has thrown an exception." Then
 

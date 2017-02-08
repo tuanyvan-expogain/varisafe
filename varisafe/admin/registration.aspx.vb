@@ -22,13 +22,17 @@ Public Partial Class registration
         Dim objC As New BusinessRules.CCourse
 
         With objC
-            .GetUpcoming()
-            ddlCourse.DataSource = .Courses
+            .GetUpcomingDS()
+            ddlCourse.DataSource = .CourseDS.Tables(0).DefaultView
             ddlCourse.DataBind()
+
+            ddlCopy.DataSource = .CourseDS.Tables(0).DefaultView
+            ddlCopy.DataBind()
 
             Dim itm As New ListItem("-Select-", 0)
             ddlCourse.Items.Insert(0, itm)
-            .Courses.Close()
+            ddlCopy.Items.Insert(0, itm)
+            .CourseDS.Dispose()
         End With
 
     End Sub
@@ -127,4 +131,17 @@ Public Partial Class registration
 
     End Sub
 
+    Protected Sub btnCopy_Click(sender As Object, e As EventArgs) Handles btnCopy.Click
+
+        Dim objReg As New BusinessRules.CRegistration
+        Dim NewRegID As Integer
+
+        With objReg
+            .RegistrationID = ltlRegistrationID.Text
+            .CourseID = ddlCopy.SelectedValue
+            NewRegID = .CopyRegistration()
+            Response.Redirect("registration.aspx?rid=" & NewRegID.ToString())
+        End With
+
+    End Sub
 End Class

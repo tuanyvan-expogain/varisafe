@@ -568,6 +568,17 @@ Public Class CRegistration
 
     End Function
 
+    Function CopyRegistration() As Integer
+
+        Dim NewRegID As Integer
+
+        NewRegID = SqlHelper.ExecuteScalar(strConn, CommandType.StoredProcedure, "spCopyRegistration",
+            New SqlParameter("@RegistrationID", RegistrationID),
+            New SqlParameter("@CourseID", CourseID))
+
+        Return NewRegID
+
+    End Function
 #End Region
 
 End Class

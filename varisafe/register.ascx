@@ -7,7 +7,6 @@
 <div id="sidebar-register">
 <div id="dvStep1" runat="server">
     <label>Choose your Course</label>
-    <h5>You must take the Home Alone course prior to taking the Babysitters course.</h5>
     <a href="registration.aspx?cid=1&step=3"><img src="img/babysitters.jpg" alt="Babysitters Course" /></a>
     <a href="registration.aspx?cid=2&step=3"><img src="img/homealone.jpg" alt="Home Alone Course" /></a>
 </div>
