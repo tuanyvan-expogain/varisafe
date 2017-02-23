@@ -3,18 +3,18 @@
 <%Dim strServer As String = Request.ServerVariables("SERVER_NAME").ToLower
 
     If InStr(strServer, "www.varisafe.ca") <= 0 Then
-            Dim strURL As String
-            Dim qs As String = ""
+        Dim strURL As String
+        Dim qs As String = ""
 
-            If Len(Request.QueryString.ToString) > 0 Then
-                qs = "?" + Request.QueryString.ToString
-            End If
+        If Len(Request.QueryString.ToString) > 0 Then
+            qs = "?" + Request.QueryString.ToString
+        End If
 
-            strURL = "https://www.varisafe.ca" + Request.ServerVariables("SCRIPT_NAME") + qs
-            'The next line is active in the live site but doesn't work on localhost
-        ' Response.Redirect(strURL)
+        strURL = "https://www.varisafe.ca" + Request.ServerVariables("SCRIPT_NAME") + qs
+        'The next line is active in the live site but doesn't work on localhost
+        'Response.Redirect(strURL)
     End If
-    
+
     If InStr(strServer, "www.varisafe.ca") > 0 Then
         If Request.ServerVariables("HTTPS") = "off" Then
             Dim strURL As String
@@ -26,7 +26,7 @@
 
             strURL = "https://www.varisafe.ca" + Request.ServerVariables("SCRIPT_NAME") + qs
             'The next line is active in the live site but doesn't work on localhost
-         '   Response.Redirect(strURL)
+            'Response.Redirect(strURL)
         End If
     End If%>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">

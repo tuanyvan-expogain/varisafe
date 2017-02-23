@@ -98,6 +98,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="admin\hashpass.aspx" />
+    <Content Include="css\font-awesome.min.css" />
     <Content Include="Default.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -289,6 +290,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="nosidebar.Master.designer.vb">
+      <DependentUpon>nosidebar.Master</DependentUpon>
+    </Compile>
+    <Compile Include="nosidebar.Master.vb">
+      <DependentUpon>nosidebar.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="page.ascx.vb">
       <DependentUpon>page.ascx</DependentUpon>
@@ -488,6 +496,7 @@
     <Content Include="thankyou.aspx" />
     <Content Include="upcoming.ascx" />
     <Content Include="WebForm1.aspx" />
+    <Content Include="nosidebar.Master" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BusinessRules\BusinessRules.vbproj">

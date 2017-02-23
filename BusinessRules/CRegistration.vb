@@ -274,6 +274,12 @@ Public Class CRegistration
 
     End Sub
 
+    Sub GetDuplicates()
+
+        CourseDS = SqlHelper.ExecuteDataset(strConn, CommandType.StoredProcedure, "spGetDuplicates")
+
+    End Sub
+
     Sub SearchRegistrationsByCourseID()
 
         CourseDS = SqlHelper.ExecuteDataset(strConn, CommandType.StoredProcedure, "spSearchRegistrationsByCourseID", _
@@ -340,6 +346,7 @@ Public Class CRegistration
         Dim strCourse1 As String = "preparing yourself to stay home alone"
         Dim strIntro As String = "Your registration has been accepted and you are "
         Dim strBuilding As String = ""
+        Dim strAdditional As String = ""
 
         If Remind Then
             strIntro = "This is a friendly reminder that you are "
@@ -367,35 +374,39 @@ Public Class CRegistration
             strBuilding = "<br />" + objC.Building
         End If
 
-        Dim strBody As String = "<p>Hi there,</p><p>&nbsp;</p>" & _
-            "<p>" & strIntro & "confirmed to attend the <u>Vari SAFE Education</u> " & _
-           strCourse + " Training Course in <u><strong>" & objC.City & "</strong></u> on <strong>" & FormatDateTime(objC.CourseDate, DateFormat.LongDate) & "</strong>.</p><p>&nbsp;</p>" & _
-            "<p>This confirmation email will include an outline of the course details, how to pay and what to bring. " & _
-            "Please write down this information or print off a copy for your records.</p><p>&nbsp;</p>" & _
-            "<p><u><strong>Course Details</strong></u></p><p>&nbsp;</p>" & _
-            "<p>" & FormatDateTime(objC.CourseDate, DateFormat.LongDate) & "<br />" & _
-            objC.City & ", ON<br />" & _
-            objC.CourseTime & "</p><p>&nbsp;</p>" & _
-            "<p><u><strong>Location</strong></u></p><p>&nbsp;</p>" & _
-            "<p><u>" & objC.Location & "</u>" & strMap & strBuilding & "</p><p>&nbsp;</p>" & _
-            "<p><u><strong>Times</strong></u></p><p>&nbsp;</p>" & _
-            "<p><u>Check in:</u> Please arrive anytime between " & strCheckin & " and " & objC.StartTime & ".<br />" & _
-            "Course begins right at " & objC.StartTime & " and finishes at " & objC.EndTime & " sharp.</p><p>&nbsp;</p>" & _
-            "<p><em>Please note: We currently do not offer an early drop off/ late pick up service. Please arrange transportation for your child to and from the course.</em></p>" & _
-            "<p><p>&nbsp;</p><u><strong>Payment</strong></u></p><p>&nbsp;</p>" & _
-            "<p>The course fee is $53.10 plus HST (total cost is $60.00, per student). Please pay with cash the morning of the course. Please request a tax receipt upon payment should you require one.</p><p>&nbsp;</p>" & _
-            "<p><em>Please note: We apologize but we are unable to accept cheques or credit cards at this time. Due to the large number of declined cards and NSF cheques we can only accept cash payments.</em></p><p>&nbsp;</p>" & _
-            "<p><u><strong>What to bring</strong></u></p><p>&nbsp;</p>" & _
-            "<ul><li>Writing and note taking supplies (pen or pencil).</li>" & _
-            "<li>Markers and/or pencil crayons (optional).</li>" & strDoll & _
-            "<li>Lunch, including snacks and drinks. Please pack a nut free lunch due to the risk of nut allergies.</li></ul>" & _
-            "<p>Congratulations on taking the first step in " + strCourse1 + "! We are excited to have you in our class and look forward to meeting you soon. Please contact us if you have any questions.</p><p>&nbsp;</p>" & _
-            "<p><a href=""http://www.facebook.com/VariSAFE"">Like us on Facebook</a> or " & _
-            "<a href=""https://twitter.com/VariSafeEdu"">follow us on Twitter</a> for your chance to win a free course with Vari SAFE Education!</p>" & _
-            "<p>Kindest regards,</p><p>&nbsp;</p>" & _
-            "<p><em>" & strTeam & "</em><br />" & _
-            "<p><strong>Vari SAFE Education</strong></p>" & _
-            "<p><a href=""mailto:register@varisafe.ca"">register@varisafe.ca</a><br />" & _
+        If objC.AdditionalInfo <> "" Then
+            strAdditional = "<p>Additional Information: " & objC.AdditionalInfo & "</p>"
+        End If
+
+        Dim strBody As String = "<p>Hi there,</p><p>&nbsp;</p>" &
+            "<p>" & strIntro & "confirmed to attend the <u>Vari SAFE Education</u> " &
+           strCourse + " Training Course in <u><strong>" & objC.City & "</strong></u> on <strong>" & FormatDateTime(objC.CourseDate, DateFormat.LongDate) & "</strong>.</p><p>&nbsp;</p>" &
+            "<p>This confirmation email will include an outline of the course details, how to pay and what to bring. " &
+            "Please write down this information or print off a copy for your records.</p>" & strAdditional & "<p>&nbsp;</p>" &
+            "<p><u><strong>Course Details</strong></u></p><p>&nbsp;</p>" &
+            "<p>" & FormatDateTime(objC.CourseDate, DateFormat.LongDate) & "<br />" &
+            objC.City & ", ON<br />" &
+            objC.CourseTime & "</p><p>&nbsp;</p>" &
+            "<p><u><strong>Location</strong></u></p><p>&nbsp;</p>" &
+            "<p><u>" & objC.Location & "</u>" & strMap & strBuilding & strAdditional & "</p><p>&nbsp;</p>" &
+            "<p><u><strong>Times</strong></u></p><p>&nbsp;</p>" &
+            "<p><u>Check in:</u> Please arrive anytime between " & strCheckin & " and " & objC.StartTime & ".<br />" &
+            "Course begins right at " & objC.StartTime & " and finishes at " & objC.EndTime & " sharp.</p><p>&nbsp;</p>" &
+            "<p><em>Please note: We currently do not offer an early drop off/ late pick up service. Please arrange transportation for your child to and from the course.</em></p>" &
+            "<p><p>&nbsp;</p><u><strong>Payment</strong></u></p><p>&nbsp;</p>" &
+            "<p>The course fee is $53.10 plus HST (total cost is $60.00, per student). Please pay with cash the morning of the course. Please request a tax receipt upon payment should you require one.</p><p>&nbsp;</p>" &
+            "<p><em>Please note: We apologize but we are unable to accept cheques or credit cards at this time. Due to the large number of declined cards and NSF cheques we can only accept cash payments.</em></p><p>&nbsp;</p>" &
+            "<p><u><strong>What to bring</strong></u></p><p>&nbsp;</p>" &
+            "<ul><li>Writing and note taking supplies (pen or pencil).</li>" &
+            "<li>Markers and/or pencil crayons (optional).</li>" & strDoll &
+            "<li>Lunch, including snacks and drinks. Please pack a nut free lunch due to the risk of nut allergies.</li></ul>" &
+            "<p>Congratulations on taking the first step in " + strCourse1 + "! We are excited to have you in our class and look forward to meeting you soon. Please contact us if you have any questions.</p><p>&nbsp;</p>" &
+            "<p><a href=""http://www.facebook.com/VariSAFE"">Like us on Facebook</a> or " &
+            "<a href=""https://twitter.com/VariSafeEdu"">follow us on Twitter</a> for your chance to win a free course with Vari SAFE Education!</p>" &
+            "<p>Kindest regards,</p><p>&nbsp;</p>" &
+            "<p><em>" & strTeam & "</em><br />" &
+            "<p><strong>Vari SAFE Education</strong></p>" &
+            "<p><a href=""mailto:register@varisafe.ca"">register@varisafe.ca</a><br />" &
             "<a href=""www.varisafe.ca"">www.varisafe.ca</a></p>"
 
         Address2 = strBody
@@ -575,6 +586,12 @@ Public Class CRegistration
         NewRegID = SqlHelper.ExecuteScalar(strConn, CommandType.StoredProcedure, "spCopyRegistration",
             New SqlParameter("@RegistrationID", RegistrationID),
             New SqlParameter("@CourseID", CourseID))
+
+        'If new course is active, send confirmation email
+        If CourseID <> 4364 Then
+            GetRegistration()
+            SendRegEmail(False)
+        End If
 
         Return NewRegID
 

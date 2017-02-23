@@ -32,6 +32,15 @@ Partial Public Class registrations
     Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
     
     '''<summary>
+    '''txtEmailList control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtEmailList As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
     '''ddlCourse control.
     '''</summary>
     '''<remarks>
@@ -138,6 +147,24 @@ Partial Public Class registrations
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btnReset As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''btnDuplicates control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnDuplicates As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''btnMailList control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnMailList As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
     '''dvResults control.

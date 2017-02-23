@@ -233,6 +233,39 @@ div.credit p
     width: 260px;
     float: right;
 }
+
+div.lDiv {
+    width: 220px;
+    float: left;
+    height: 240px;
+}
+
+div.rDiv {
+    width: 880px;
+    /*float: right;*/
+}
+
+div.clear {
+    clear: both;
+}
+
+.blueList, .rDiv ul li {
+    color:#456ea8;
+}
+
+.rDiv ul li {
+    list-style-type: none;
+
+}
+
+p.blueList {
+    padding-bottom: 40px;
+    padding-top: 10px; 
+    overflow: hidden; /* fix for Firefox */
+    break-inside: avoid-column;
+    -webkit-column-break-inside: avoid;
+}
+
 #mainColumn > div.main, #mainColumn > div.inside
 {
     min-height: 20px;

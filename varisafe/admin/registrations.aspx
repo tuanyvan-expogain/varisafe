@@ -8,6 +8,8 @@
 
 <hr />
     <form id="form1" runat="server">
+    <asp:textbox id="txtEmailList" textmode="multiline" visible="false" runat="server" width="750" height="250" />
+
     <div>
         <div class="row">
             <span class="label">Course:</span>
@@ -59,6 +61,8 @@
         </div>
         <asp:button id="btnSearch" runat="server" text="Search" />
         <asp:button id="btnReset" runat="server" text="Reset" />
+        <asp:button id="btnDuplicates" runat="server" text="Duplicates" />
+        <asp:button id="btnMailList" runat="server" text="Mail List" visible="false" />
     </div>
     
     <div id="dvResults" runat="server" visible="false">
@@ -73,6 +77,11 @@
                 <asp:BoundField DataField="City" HeaderText="City" SortExpression="City"></asp:BoundField>
                 <asp:BoundField DataField="CourseDate" HeaderText="Course Date" SortExpression="CourseDate"></asp:BoundField>
                 <asp:BoundField DataField="RegDate" HeaderText="Reg Date" SortExpression="RegDate"></asp:BoundField>
+                 <asp:templatefield headertext="Email" sortexpression="Email">
+                    <itemtemplate>
+                        <asp:literal id="ltlEmail" runat="server" text='<%# Bind("Email") %>' />
+                    </itemtemplate>
+                </asp:templatefield>
                 <asp:templatefield visible="true" headertext="Wait List">
                     <itemtemplate>
                         <asp:literal id="ltlWaitList" runat="server" text='<%# Bind("WaitList") %>'></asp:literal>
@@ -85,6 +94,7 @@
                         <asp:linkbutton runat="server" id="btnActivate" commandname="Activate" text="Activate" CommandArgument="<%# Container.DataItemIndex %>"></asp:linkbutton>
                     </itemtemplate>
                 </asp:templatefield>
+               
             </columns>
         </asp:gridview>
         <asp:gridview id="gvExport" runat="server" autogeneratecolumns="false" visible="false">

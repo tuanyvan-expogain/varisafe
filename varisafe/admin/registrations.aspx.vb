@@ -11,6 +11,8 @@ Public Partial Class registrations
                     SearchByCourseID()
                 End If
             End If
+
+            btnMailList.Visible = False
         End If
     End Sub
 
@@ -62,9 +64,11 @@ Public Partial Class registrations
 
                 gvExport.DataSource = .CourseDS.Tables(1)
                 gvExport.DataBind()
+                btnMailList.Visible = True
             Else
                 lblNumResults.Text = "0 Registrations"
                 btnExport.Visible = False
+                btnMailList.Visible = False
             End If
 
             .CourseDS.Dispose()
@@ -125,6 +129,7 @@ Public Partial Class registrations
             gvExport.DataBind()
             .CourseDS.Dispose()
             dvResults.Visible = True
+            btnMailList.Visible = True
         End With
 
     End Sub
@@ -147,6 +152,11 @@ Public Partial Class registrations
         dvResults.Visible = False
         ddlCity.ClearSelection()
         ddlCourse.ClearSelection()
+        txtEmailList.Text = ""
+        txtEmailList.Visible = False
+        btnMailList.Visible = False
+        ddlWaitList.Items(0).Text = "Any"
+        ddlWaitList.ClearSelection()
 
     End Sub
 
@@ -283,7 +293,7 @@ Public Partial Class registrations
 
             Dim objLnk As LinkButton
 
-            objLnk = CType(e.Row.Cells(9).Controls(0), LinkButton)
+            objLnk = CType(e.Row.Cells(10).Controls(0), LinkButton)
             objLnk.Attributes.Add("onclick", "return confirm('Are you sure you want to Delete this item?')")
 
         End If
@@ -375,4 +385,26 @@ Public Partial Class registrations
 
     End Sub
 
+    Protected Sub btnMailList_Click(sender As Object, e As EventArgs) Handles btnMailList.Click
+
+        Dim strList As String = ""
+        'Dim i As Integer
+        Dim r As GridViewRow
+
+        For Each r In gvReg.Rows
+            strList += CType(r.FindControl("ltlEmail"), Literal).Text & ";"
+        Next
+
+        'For i = 0 To gvReg.Rows.Count - 1
+        '    strList += gvReg.Rows()
+        'Next
+
+        txtEmailList.Text = strList
+        txtEmailList.Visible = True
+
+    End Sub
+
+    Private Sub btnDuplicates_Click(sender As Object, e As EventArgs) Handles btnDuplicates.Click
+
+    End Sub
 End Class

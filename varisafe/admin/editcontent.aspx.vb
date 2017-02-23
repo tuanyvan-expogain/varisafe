@@ -8,6 +8,7 @@ Public Class editcontent
     Protected WithEvents txtElementContentID As System.Web.UI.WebControls.TextBox
     Protected WithEvents lblError As System.Web.UI.WebControls.Label
     Protected WithEvents txtContent As FreeTextBoxControls.FreeTextBox
+    Protected WithEvents txtContentPlain As System.Web.UI.WebControls.TextBox
 
 #Region " Web Form Designer Generated Code "
 
@@ -51,7 +52,7 @@ Public Class editcontent
                 .EditHTMLContent()
 
                 If Not IsNothing(.Contents) Then
-                    txtContent.Text = .Contents.ToString
+                    txtContentplain.Text = .Contents.ToString
                 End If
                 ' XHTMLEditor1.Value = .Contents.ToString
 
@@ -73,7 +74,7 @@ Public Class editcontent
 
 
             With objPE
-                .Contents = txtContent.Text 'XHTMLEditor1.Value
+                .Contents = txtContentPlain.Text 'XHTMLEditor1.Value
 
                 If Request.QueryString("ecid") <> "" Then
                     .PageElementID = CInt(txtElementContentID.Text)

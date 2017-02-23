@@ -111,10 +111,10 @@
             <span class="labelwide">Internal Notes</span>
             <asp:textbox id="txtInternalNotes" runat="server" textmode="multiline"></asp:textbox>
         </div>
-        <div class="row">
-            <span class="labelwide">Adjusted Rate</span>
-            <asp:textbox id="txtAdjustedRate" runat="server"></asp:textbox>
-        </div>
+        <%--<div class="row">
+            <span class="labelwide">Adjusted Rate</span>--%>
+            <asp:textbox id="txtAdjustedRate" runat="server" visible="false"></asp:textbox>
+        <%--</div>--%>
         <div class="row">
             <span class="labelwide">Registered</span>
             <asp:textbox id="txtRegDate" runat="server" enabled="false"></asp:textbox>

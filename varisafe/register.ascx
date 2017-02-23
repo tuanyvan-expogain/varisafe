@@ -7,8 +7,49 @@
 <div id="sidebar-register">
 <div id="dvStep1" runat="server">
     <label>Choose your Course</label>
-    <a href="registration.aspx?cid=1&step=3"><img src="img/babysitters.jpg" alt="Babysitters Course" /></a>
-    <a href="registration.aspx?cid=2&step=3"><img src="img/homealone.jpg" alt="Home Alone Course" /></a>
+    <div>
+        <div class="lDiv">
+            <a href="registration.aspx?cid=2&step=3"><img src="img/homealone.jpg" alt="Home Alone Course" /></a>
+        </div>
+        <div class="rDiv">
+            <h4>Home Alone &amp; Stranger Safety</h4>
+            <ul>
+                <li><i class="fa fa-check text-success"></i> The best course to take first!</li>
+                <li><i class="fa fa-check text-success"></i> Ages 8-11 are welcome, ideally students are mature for their age (especially if under 10)</li>
+                <li><i class="fa fa-check text-success"></i> Focus is on SELF safety, critical thinking and building confidence</li>
+                <li><i class="fa fa-check text-success"></i> Stranger Safety, getting home safely, staying productive and home alone house rules</li>
+                <li><i class="fa fa-check text-success"></i> Internet safety, phone safety and door safety</li>
+                <li><i class="fa fa-check text-success"></i> Kitchen safety and fire safety, with an emphasis on prevention</li>
+                <li><i class="fa fa-check text-success"></i> Basic First Aid (for self), knowing when to call 911 or your parents</li>
+                <li><i class="fa fa-check text-success"></i> The best course to take if unsure (Babysitting is very different, there is little overlap in content)</li>
+                <li><i class="fa fa-check text-success"></i> Siblings should attend together provided they are all of minimum  age, and want to attend</li>
+            </ul>
+            <p class="blueList">Does NOT certify your child to be able to stay Home Alone, this is a family decision <br /><a href="/HomeAloneQuestions.aspx" title="Home Alone Questins">CLICK HERE FOR MORE INFORMATION</a></p>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div>
+        <div class="lDiv">
+            <a href="registration.aspx?cid=1&step=3"><img src="img/babysitters.jpg" alt="Babysitters Course" /></a>
+        </div>
+        <div class="rDiv">
+            <h4>Kid Sitters Canada Babysitters Training</h4>
+            <ul>
+                <li><i class="fa fa-check text-success"></i> Best taken as the second course (if completing both programs)</li>
+                <li><i class="fa fa-check text-success"></i> Ages 10-14 are welcome, ideally students are mature for their age (especially if under 11)</li>
+                <li><i class="fa fa-check text-success"></i> Focus is on keeping OTHERS safe while in your care and control</li>
+                <li><i class="fa fa-check text-success"></i> Prepares students for their first job babysitting when they are of sufficient age</li>
+                <li><i class="fa fa-check text-success"></i> Infants, toddlers and school age children – understanding the differences and care for each</li>
+                <li><i class="fa fa-check text-success"></i> Kitchen safety and making safe, healthy, age appropriate snacks</li>
+                <li><i class="fa fa-check text-success"></i> Fire safety, how to call 911 and use of an extinguisher</li>
+                <li><i class="fa fa-check text-success"></i> First Aid (for others), including choking and obstructions, rescue breathing and allergic reactions</li>
+                <li><i class="fa fa-check text-success"></i> How to prepare for your first job, interview skills and employer responsibilities</li>
+            </ul>
+         <p class="blueList">Students who are not old enough to babysit can still attend to learn and prepare, however, supervision will be required for any practice time with younger siblings or other children.</p>
+       </div>
+        <div class="clear"></div>
+    </div>
+    
 </div>
 
 <div id="dvStep2" runat="server" visible="false">

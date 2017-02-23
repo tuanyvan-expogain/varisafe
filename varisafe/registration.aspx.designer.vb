@@ -12,7 +12,7 @@ Option Explicit On
 
 
 Partial Public Class _registration
-
+    
     '''<summary>
     '''register1 control.
     '''</summary>
@@ -21,13 +21,4 @@ Partial Public Class _registration
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents register1 As Global.varisafe.register
-
-    '''<summary>
-    '''upcoming1 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents upcoming1 As Global.varisafe.upcoming
 End Class

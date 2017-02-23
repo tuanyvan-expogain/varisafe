@@ -84,8 +84,10 @@ Public Class courses
             Dim deleteButton As LinkButton = e.Item.FindControl("btnDelete")
 
             'We can now add the onclick event handler
-            deleteButton.Attributes("onclick") = "javascript:return " & _
+            deleteButton.Attributes("onclick") = "javascript:return " &
                        "confirm('Are you sure you want to delete this course?')"
+
+
         End If
     End Sub
 
@@ -141,6 +143,13 @@ Public Class courses
             'We can now add the onclick event handler
             deleteButton.Attributes("onclick") = "javascript:return " & _
                        "confirm('***Are you sure you want to delete this course and ALL registrations?***')"
+
+            'Reminder confirmation
+            Dim remindButton As LinkButton = CType(e.Item.Cells(dgCourses.Columns.Count - 3).Controls(0), LinkButton)
+
+            'We can now add the onclick event handler
+            remindButton.Attributes("onclick") = "javascript:return " &
+                       "confirm('Are you sure you want to send reminders for this course?')"
 
             If e.Item.Cells(6).Text = "0" Then
                 e.Item.BackColor = Drawing.Color.LightGray
