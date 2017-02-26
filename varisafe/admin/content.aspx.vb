@@ -32,8 +32,10 @@ Public Class content
             With objPE
                 .GetHTMLElements()
 
-                dgContent.DataSource = .PageStructure
+                Dim dView As New DataView(.PageStructure.Tables(0), "elementContentID IS NOT NULL", "", DataViewRowState.OriginalRows)
+                dgContent.DataSource = dView '.PageStructure
                 dgContent.DataBind()
+                dView.Dispose()
             End With
         Catch objError As Exception
 

@@ -258,6 +258,10 @@ div.clear {
 
 }
 
+#content p, #content ul li, #content ol li, #content h5 {
+    color:#456ea8;
+}
+
 p.blueList {
     padding-bottom: 40px;
     padding-top: 10px; 

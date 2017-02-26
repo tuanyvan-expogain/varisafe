@@ -406,5 +406,26 @@ Public Partial Class registrations
 
     Private Sub btnDuplicates_Click(sender As Object, e As EventArgs) Handles btnDuplicates.Click
 
+        Dim objReg As New BusinessRules.CRegistration
+
+        With objReg
+            .GetDuplicates()
+            'Dim dView As New DataView(.CourseDS.Tables(0), "", e.SortExpression & " " & ltlDir.Text, DataViewRowState.OriginalRows)
+            gvReg.DataSource = .CourseDS.Tables(0) 'dView
+            gvReg.DataBind()
+            lblNumResults.Text = .CourseDS.Tables(0).Rows.Count.ToString + " Registrations"
+
+            'gvExport.DataSource = .CourseDS.Tables(1)
+            'gvExport.DataBind()
+            .CourseDS.Dispose()
+            dvResults.Visible = True
+        End With
+
+        If ltlDir.Text = "ASC" Then
+            ltlDir.Text = "DESC"
+        Else
+            ltlDir.Text = "ASC"
+        End If
+
     End Sub
 End Class
