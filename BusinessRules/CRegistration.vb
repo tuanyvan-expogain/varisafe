@@ -402,7 +402,7 @@ Public Class CRegistration
             "<li>Lunch, including snacks and drinks. Please pack a nut free lunch due to the risk of nut allergies.</li></ul>" &
             "<p>Congratulations on taking the first step in " + strCourse1 + "! We are excited to have you in our class and look forward to meeting you soon. Please contact us if you have any questions.</p><p>&nbsp;</p>" &
             "<p><a href=""http://www.facebook.com/VariSAFE"">Like us on Facebook</a> or " &
-            "<a href=""https://twitter.com/VariSafeEdu"">follow us on Twitter</a> for your chance to win a free course with Vari SAFE Education!</p>" &
+            "<a href=""hhttps://www.instagram.com/vari_safe_education_/"">follow us on Instagram</a> for your chance to win a free course with Vari SAFE Education!</p>" &
             "<p>Kindest regards,</p><p>&nbsp;</p>" &
             "<p><em>" & strTeam & "</em><br />" &
             "<p><strong>Vari SAFE Education</strong></p>" &
@@ -450,26 +450,26 @@ Public Class CRegistration
             strMap = "<br />Google Map Link: <a href=""" & objC.MapLink & """>" & objC.MapLink & "</a>"
         End If
 
-        Dim strBody As String = "<p>Hi there,</p><p>&nbsp;</p>" & _
-            "<p>Your registration has been added to our Waiting List for the the <u>Vari SAFE Education</u> " & _
-           strCourse + " Training Course in <strong><u>" & objC.City & "</u></strong> on <strong>" & FormatDateTime(objC.CourseDate, DateFormat.LongDate) & "</strong>.</p><p>&nbsp;</p>" & _
-            "<p>We do limit our class sizes to maintain a safe, and effective learning environment with increased " + _
-            "student to instructor interaction.</p><p>&nbsp;</p>" + _
-            "<p>We will hold your registration request in queue, and in the event of a cancellation – we will provide you " + _
-            "with a confirmation email if a space should become available for your student.  Cancellations may occur, " + _
-            "however they are generally during the week leading up to the course date.</p><p>&nbsp;</p>" & _
-            "<p><u><strong>Course Details</strong></u></p><p>&nbsp;</p>" & _
-            "<p>" & FormatDateTime(objC.CourseDate, DateFormat.LongDate) & "<br />" & _
-            objC.City & ", ON<br />" & _
-            objC.CourseTime & "</p><p>&nbsp;</p>" & _
-            "<p><strong><u>Location</strong></u></p><p>&nbsp;</p>" & _
-            "<p><u>" & objC.Location & "</u>" & strMap & "</p><p>&nbsp;</p>" & _
-            "<p><a href=""http://www.facebook.com/VariSAFE"">Like us on Facebook</a> or " & _
-            "<a href=""https://twitter.com/VariSafeEdu"">follow us on Twitter</a> for your chance to win a free course with Vari SAFE Education!</p>" & _
-            "<p>Kindest regards,</p><p>&nbsp;</p>" & _
-            "<p><em>" & strTeam & "</em><br />" & _
-            "<p><strong>Vari SAFE Education</strong></p>" & _
-            "<p><a href=""mailto:register@varisafe.ca"">register@varisafe.ca</a><br />" & _
+        Dim strBody As String = "<p>Hi there,</p><p>&nbsp;</p>" &
+            "<p>Your registration has been added to our Waiting List for the the <u>Vari SAFE Education</u> " &
+           strCourse + " Training Course in <strong><u>" & objC.City & "</u></strong> on <strong>" & FormatDateTime(objC.CourseDate, DateFormat.LongDate) & "</strong>.</p><p>&nbsp;</p>" &
+            "<p>We do limit our class sizes to maintain a safe, and effective learning environment with increased " +
+            "student to instructor interaction.</p><p>&nbsp;</p>" +
+            "<p>We will hold your registration request in queue, and in the event of a cancellation – we will provide you " +
+            "with a confirmation email if a space should become available for your student.  Cancellations may occur, " +
+            "however they are generally during the week leading up to the course date.</p><p>&nbsp;</p>" &
+            "<p><u><strong>Course Details</strong></u></p><p>&nbsp;</p>" &
+            "<p>" & FormatDateTime(objC.CourseDate, DateFormat.LongDate) & "<br />" &
+            objC.City & ", ON<br />" &
+            objC.CourseTime & "</p><p>&nbsp;</p>" &
+            "<p><strong><u>Location</strong></u></p><p>&nbsp;</p>" &
+            "<p><u>" & objC.Location & "</u>" & strMap & "</p><p>&nbsp;</p>" &
+            "<p><a href=""http://www.facebook.com/VariSAFE"">Like us on Facebook</a> or " &
+            "<a href=""https://www.instagram.com/vari_safe_education_/"">follow us on Instagram</a> for your chance to win a free course with Vari SAFE Education!</p>" &
+            "<p>Kindest regards,</p><p>&nbsp;</p>" &
+            "<p><em>" & strTeam & "</em><br />" &
+            "<p><strong>Vari SAFE Education</strong></p>" &
+            "<p><a href=""mailto:register@varisafe.ca"">register@varisafe.ca</a><br />" &
             "<a href=""www.varisafe.ca"">www.varisafe.ca</a></p>"
 
         Address2 = strBody
