@@ -38,5 +38,6 @@ Public Partial Class thankyou
             lblPromoCode.Text = .PromoCode
         End With
 
+        lblMessage.Text = Session("Message")
     End Sub
 End Class

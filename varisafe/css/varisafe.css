@@ -387,3 +387,8 @@ p.blueList {
 .underline {
   text-decoration: underline;
 }
+
+.hide {
+    visibility: hidden;
+    display: none;
+}

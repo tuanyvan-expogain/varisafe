@@ -185,6 +185,7 @@ Public Partial Class register
             End If
             .SaveRegistration()
             Session("rid") = .RegistrationID
+            Session("Message") = .Address2
 
             'Response.Write(.Address2)
         End With

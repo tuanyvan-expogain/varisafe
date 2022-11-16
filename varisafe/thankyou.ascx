@@ -1,6 +1,10 @@
 <%@ Control Language="vb" AutoEventWireup="false" CodeBehind="thankyou.ascx.vb" Inherits="varisafe.thankyou" %>
 
 <div>
+    <asp:Label runat="server" ID="lblMessage"></asp:Label>
+</div>
+
+<div class="hide">
     <p>Thank you for your online registration, we will be sending you a course confirmation message within 
     the next 10 minutes with the following; course location and address, pick-up and drop-off 
     times for your student, what to bring and how to make payment the morning of the course.  

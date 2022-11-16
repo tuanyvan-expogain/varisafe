@@ -43,14 +43,14 @@
             <span class="label">Email:</span>
             <asp:textbox id="txtEmail" runat="server"></asp:textbox>
         </div>
-        <div class="row">
-            <span class="label">Phone:</span>
-            <asp:textbox id="txtPhone" runat="server"></asp:textbox>
-        </div>
-        <div class="row">
-            <span class="label">Registration #:</span>
-            <asp:textbox id="txtRegistrationID" runat="server"></asp:textbox>
-        </div>
+        <%--<div class="row">
+            <span class="label">Phone:</span>--%>
+            <asp:textbox id="txtPhone" runat="server" visible="false"></asp:textbox>
+        <%--</div>--%>
+        <%--<div class="row">
+            <span class="label">Registration #:</span>--%>
+            <asp:textbox id="txtRegistrationID" runat="server" visible="false"></asp:textbox>
+        <%--</div>--%>
         <div class="row">
             <span class="label">Wait Status:</span>
             <asp:dropdownlist id="ddlWaitList" runat="server">

@@ -23,6 +23,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -100,6 +101,7 @@
     <Content Include="admin\hashpass.aspx" />
     <Content Include="css\font-awesome.min.css" />
     <Content Include="Default.aspx" />
+    <Content Include="mailtest.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -262,6 +264,13 @@
     <Compile Include="HomePageTop.ascx.vb">
       <DependentUpon>HomePageTop.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mailtest.aspx.designer.vb">
+      <DependentUpon>mailtest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="mailtest.aspx.vb">
+      <DependentUpon>mailtest.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="mail\default.aspx.designer.vb">
       <DependentUpon>default.aspx</DependentUpon>

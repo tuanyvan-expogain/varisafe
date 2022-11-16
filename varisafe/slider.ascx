@@ -1,11 +1,13 @@
 <%@ Control Language="vb" AutoEventWireup="false" Codebehind="slider.ascx.vb" Inherits="varisafe.slider" TargetSchema="http://schemas.microsoft.com/intellisense/ie5" %>
 
+<%--<img src="img/coronavirus-update.png" alt="Coronovirus Update" />--%>
        <div id="slider" class=""><!-- content --> 
             <div id="slider-wrap" class="">
                 <div id="myCarousel" class="carousel slide well">
                     <!-- Carousel items -->
                     <div class="carousel-inner">
                         <div class="active item">
+                           
                             <img src="img/slide1.jpg" />
                         </div>
                         <div class="item">

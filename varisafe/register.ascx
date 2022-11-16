@@ -133,9 +133,8 @@
         <div class="row control-group">
             <span class="labelwide control-label">Email *</span>
             <div class="controls">
-            <asp:textbox id="txtREmail" runat="server" cssclass="txtlrg"></asp:textbox>
+            <asp:textbox id="txtREmail" runat="server" cssclass="txtlrg" type="email"></asp:textbox>
              <asp:requiredfieldvalidator id="RequiredFieldValidator16" runat="server" errormessage="*" CssClass="help-inline" controltovalidate="txtREmail" display="Dynamic" setfocusonerror="true"></asp:requiredfieldvalidator>
-             <asp:regularexpressionvalidator id="RegularExpressionValidator2" runat="server" errormessage="Invalid Email Format" controltovalidate="txtREmail"  setfocusonerror="true" validationexpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:regularexpressionvalidator>
              </div> 
          </div>  
          <asp:button id="btnRequest" runat="server" text="Submit" CssClass="btn btn-warning" />
@@ -158,9 +157,20 @@
          to select an alternative date with available space.</p>
         <p>
         We thank you for your interest in our programming, and appreciate your understanding in limiting course sizes.</p>
-    </div>
-    
+    </div> 
     <div>
+        <p>
+            To register, please review and complete the registration form below. All course details including where to go, 
+            what to bring and how to pay upon arrival will be provided to you immediately upon submitting your registration.
+        </p>
+        <p>
+            A copy of this information will also be sent to you at the email address you provide to us below. 
+            <strong>
+                IMPORTANT: If you are using an MSN based email provider such as Hotmail or Live, you will not receive our email 
+                unfortunately. Please use an alternate email such as gmail if you are able and/or screenshot, print, or write down 
+                the information for your records. 
+            </strong>
+        </p>
         <div class="row control-group">        
             <span class="labelwide control-label">Child First Name *</span>
             <div class="controls">
@@ -193,15 +203,14 @@
         <div class="row control-group">
             <span class="labelwide control-label">Email *</span>
             <div class="controls">
-            <asp:textbox id="txtEmail" runat="server" cssclass="txtlrg"></asp:textbox>
+            <asp:textbox id="txtEmail" runat="server" cssclass="txtlrg" type="email" required></asp:textbox>
              <asp:requiredfieldvalidator id="RequiredFieldValidator6" runat="server" errormessage="*" CssClass="help-inline" controltovalidate="txtEmail" display="Dynamic" setfocusonerror="true"></asp:requiredfieldvalidator>
-             <asp:regularexpressionvalidator id="RegularExpressionValidator1" runat="server" errormessage="Invalid Email Format" controltovalidate="txtEmail"  setfocusonerror="true" validationexpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:regularexpressionvalidator>
              </div> 
          </div>
           <div class="row control-group">
             <span class="labelwide control-label">Confirm Email *</span>
             <div class="controls">
-            <asp:textbox id="txtEmail2" runat="server" cssclass="txtlrg"></asp:textbox>
+            <asp:textbox id="txtEmail2" runat="server" cssclass="txtlrg" type="email" required></asp:textbox>
             <asp:comparevalidator id="valCompare" runat="server" errormessage="Emails do not match" controltovalidate="txtEmail" controltocompare="txtEmail2" setfocusonerror="true"></asp:comparevalidator>
             </div> 
          </div>
@@ -226,12 +235,14 @@
             confirmation message (this is sent instantly upon completion of your registration). </p>
             </div> 
         </div>
-        <div class="row control-group">
-            <span class="labelwide control-label">Promo Code</span>
-            <div class="controls">
-            <asp:textbox id="txtPromoCode" runat="server"></asp:textbox>
-            </div> 
-        </div> 
+        <%--<div class="row control-group">
+            <span class="labelwide control-label">Promo Code</span> 
+            <div class="controls">-->
+            
+        <!--    </div> 
+        </div> --%>
+        
+        <asp:textbox id="txtPromoCode" runat="server" visible="false"></asp:textbox>
         <div class="row control-group">
             <span class="labelwide control-label">Parent First Name *</span>
             <div class="controls">
