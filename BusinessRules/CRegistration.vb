@@ -394,7 +394,7 @@ Public Class CRegistration
             "Course begins right at " & objC.StartTime & " and finishes at " & objC.EndTime & " sharp.</p><p>&nbsp;</p>" &
             "<p><em>Please note: We currently do not offer an early drop off/ late pick up service. Please arrange transportation for your child to and from the course.</em></p>" &
             "<p><p>&nbsp;</p><u><strong>Payment</strong></u></p><p>&nbsp;</p>" &
-            "<p>The course fee is $53.10 plus HST (total cost is $60.00, per student). Please pay with cash the morning of the course. Please request a tax receipt upon payment should you require one.</p><p>&nbsp;</p>" &
+            "<p>The course fee is $61.95 plus HST (total cost is $70.00, per student). Please pay with cash the morning of the course. Please request a tax receipt upon payment should you require one.</p><p>&nbsp;</p>" &
             "<p><em>Please note: We apologize but we are unable to accept cheques or credit cards at this time. Due to the large number of declined cards and NSF cheques we can only accept cash payments.</em></p><p>&nbsp;</p>" &
             "<p><u><strong>What to bring</strong></u></p><p>&nbsp;</p>" &
             "<ul><li>Writing and note taking supplies (pen or pencil).</li>" &
