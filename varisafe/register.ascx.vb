@@ -215,7 +215,7 @@ Public Partial Class register
             intSpaces = CInt(CType(e.Row.FindControl("ltlCapacity"), Literal).Text) - CInt(CType(e.Row.FindControl("ltlRegistrations"), Literal).Text)
 
             If intSpaces <= 0 Then
-                If intSpaces < -5 Then
+                If intSpaces < -10 Then
                     'e.Row.Visible = False
                     CType(e.Row.Cells(9).Controls(0), System.Web.UI.WebControls.HyperLink).Text = "Not Available/Wait List Full"
                     CType(e.Row.Cells(9).Controls(0), System.Web.UI.WebControls.HyperLink).Enabled = False
