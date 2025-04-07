@@ -99,6 +99,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="admin\hashpass.aspx" />
+    <Content Include="city.aspx" />
     <Content Include="css\font-awesome.min.css" />
     <Content Include="Default.aspx" />
     <Content Include="mailtest.aspx" />
@@ -210,6 +211,13 @@
     </Compile>
     <Compile Include="CDataGridToExcel.vb">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="city.aspx.designer.vb">
+      <DependentUpon>city.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="city.aspx.vb">
+      <DependentUpon>city.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="ContactForm.ascx.designer.vb">
       <DependentUpon>ContactForm.ascx</DependentUpon>
