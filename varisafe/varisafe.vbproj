@@ -112,12 +112,20 @@
     <Content Include="admin\hashpass.aspx" />
     <Content Include="bin\AjaxControlToolkit.dll" />
     <Content Include="bin\BusinessRules.dll" />
+    <Content Include="bin\BusinessRules.pdb" />
+    <Content Include="bin\BusinessRules.xml" />
     <Content Include="bin\FreeTextBox.dll" />
     <Content Include="bin\Interop.XStandard.dll" />
     <Content Include="bin\Recaptcha.dll" />
+    <Content Include="bin\varisafe.dll" />
+    <Content Include="bin\varisafe.pdb" />
+    <Content Include="bin\varisafe.xml" />
     <Content Include="bin\XStandard.WebForms.dll" />
     <Content Include="city.aspx" />
+    <Content Include="css\bootstrap-responsive.css" />
+    <Content Include="css\bootstrap.min.css" />
     <Content Include="css\font-awesome.min.css" />
+    <Content Include="css\varisafe-responsive.css" />
     <Content Include="Default.aspx" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="images\facebook-like-us.png" />
@@ -612,6 +620,7 @@
     <Content Include="js\tinymce\skins\lightgray\fonts\tinymce.eot" />
     <Content Include="js\tinymce\skins\lightgray\fonts\tinymce.ttf" />
     <Content Include="js\tinymce\skins\lightgray\fonts\tinymce.woff" />
+    <Content Include="bin\varisafe.dll.config" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
