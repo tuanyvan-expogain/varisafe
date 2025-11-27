@@ -84,6 +84,10 @@ Public Class Global_asax
 
         'Dim rewriteRule As XmlNode = siteMap.SelectSingleNode("descendant::siteMapNode[@url='" + rewriteFrom + "']")
         'Dim rewriteRule As XmlNode = siteMap.SelectSingleNode("pages[pageName = '" & rewriteFrom & "']")
+        If IsNothing(rewriteFrom) Then
+            rewriteFrom = ""
+        End If
+
         Dim rewriteRule As XmlNode = siteMap.SelectSingleNode("descendant::pages[pageName='" & rewriteFrom.ToLower & "']")
 
         'Dim rewriteToNode As XmlNode

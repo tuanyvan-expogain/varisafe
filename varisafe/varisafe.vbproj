@@ -110,9 +110,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="admin\hashpass.aspx" />
+    <Content Include="bin\AjaxControlToolkit.dll" />
     <Content Include="bin\BusinessRules.dll" />
     <Content Include="bin\FreeTextBox.dll" />
+    <Content Include="bin\Interop.XStandard.dll" />
     <Content Include="bin\Recaptcha.dll" />
+    <Content Include="bin\XStandard.WebForms.dll" />
     <Content Include="city.aspx" />
     <Content Include="css\font-awesome.min.css" />
     <Content Include="Default.aspx" />
