@@ -82,7 +82,7 @@
     </div> <!-- end wrapper -->
     
     <div class="credit" style="text-align:center">
-        <p>Copyright Vari SAFE Education <%= System.DateTime.Now.Year %> | Web Design and Development by <a href="http://www.infrontofthenet.com">In Front of The Net</a> </p>
+        <p>Copyright Vari SAFE Education <%= System.DateTime.Now.Year %> | Web Design and Development by <a href="http://www.infrontofthenet.com">In Front of The Net</a> | <a href="https://expogain.com">Expogain International Inc.</a></p>
     </div>
 </form>
 </body>

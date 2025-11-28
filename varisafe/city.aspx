@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <script runat="server">
     Sub Page_Load(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Load
-        Dim db As New System.Data.SqlClient.SqlConnection("server=67.231.16.45;Network Library=DBMSSOCN;Initial Catalog=varisafe_db;User ID=varisafedb;Password=Edn!#HdO35N@!KUtGf; Connection Timeout=600")
+        Dim db As New System.Data.SqlClient.SqlConnection("server=67.231.16.45;Network Library=DBMSSOCN;Initial Catalog=varisafedb;User ID=varisafedb;Password=Edn!#HdO35N@!KUtGf; Connection Timeout=600")
         Dim sql = "INSERT INTO tblCity (City) VALUES ('Dundas')"
         Dim cmd As New System.Data.SqlClient.SqlCommand(sql, db)
 

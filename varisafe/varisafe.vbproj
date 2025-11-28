@@ -110,6 +110,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="admin\hashpass.aspx" />
+    <Content Include="admin\xml\pages.xml" />
+    <Content Include="admin\xml\pages.xslt" />
     <Content Include="bin\AjaxControlToolkit.dll" />
     <Content Include="bin\BusinessRules.dll" />
     <Content Include="bin\BusinessRules.pdb" />
